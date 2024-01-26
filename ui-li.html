@@ -3,16 +3,19 @@
 <head>
 <title>Page Title</title>
 <style>
+:root {
+  --width: 10px;
+}
 ul {
   list-style:none;
-  width: 200px;
+  width: calc(var(--width) * 5);
   background: #ebebeb;
   padding: 0;
   height: 30px;
 }
 li {
  position:relative;
- width: 100px;
+ width: var(--width);
  float:left;
 }
 .node_1 {
@@ -20,16 +23,41 @@ li {
   background: #aaebeb;
 }
 .node_2 {
-  left: -100px;
+  left: calc(var(--width) * -1);
+  background: #ebebaa;
+}
+.node_3 {
+  left: calc(var(--width) * -2);
+  background: #ebebaa;
+}
+.node_4 {
+  left: calc(var(--width) * -3);
+  background: #ebebaa;
+}
+.node_5 {
+  left: calc(var(--width) * -4);
   background: #ebebaa;
 }
 </style>
+<script>
+function init() {
+  var viewport_width = visualViewport.width;
+  let root = document.documentElement;
+  root.style.setProperty('--width', viewport_width + 'px');
+  console.log('viewport_width');
+}
+window.addEventListener('load', init);
+console.log('addEventListener');
+</script>
 </head>
 <body>
 
 <ul>
 <li class='node_1'>1</li>
 <li class='node_2'>2</li>
+<li class='node_3'>3</li>
+<li class='node_4'>4</li>
+<li class='node_5'>5</li>
 </ul>
 
 </body>
