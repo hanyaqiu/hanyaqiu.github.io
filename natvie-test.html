@@ -1,0 +1,52 @@
+<!Document>
+<html>
+<head>
+    <title>同层渲染测试html</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<style>
+    .covered {
+        height: 300px;
+        width: 100%;
+        background-color: black;
+        position: fixed;
+        z-index: 1000;
+        opacity: 0.1;
+    }
+</style>
+<body>
+<div>
+    <div id="buttonContainer">
+        <embed id="nativeButton" type = "native/button" width="380" height="380" src="test?params1=xxx?"/>
+    </div>
+
+<!--    <div id="inputContainer">-->
+<!--        <embed id="nativeInput" type = "native/input" width="800" height="800" src="test?params1=xxx?"/>-->
+<!--    </div>-->
+</div>
+<div id="button" width="500" height="200">
+    <p>bottom</p>
+</div>
+<script>
+let nativeEmbed = {
+    // 判断设备是否支持touch事件
+    nativeButton : document.getElementById('nativeButton'),
+    nativeVideo : document.getElementById('nativeVideo'),
+    nativeWeb : document.getElementById('nativeWeb'),
+
+    // 事件
+    events:{},
+    // 初始化
+    init:function(){
+        let self = this;
+        self.nativeButton.addEventListener('touchstart', self.events, false);
+        self.nativeVideo.addEventListener('touchstart', self.events, false);
+        self.nativeWeb.addEventListener('touchstart', self.events, false);
+        console.log('native embed video inited');
+    }
+};
+nativeEmbed.init();
+</script>
+
+</body>
+</html>
