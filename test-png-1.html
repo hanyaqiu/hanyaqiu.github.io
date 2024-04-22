@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <style>
+    #container {
+        position:absolute;
+        top:0;
+        left:0;
+        bottom:0;
+        right:0;
+    }
 </style>
 <body>
+    <button id="btn">changeSize</button>
     <div>
     <div id="textbefor">
         <span style="color: #333333; --tt-darkmode-color: #A3A3A3;">
@@ -16,8 +24,8 @@
         </span>
     </div>
 </div>
-<div>
- <img src="https://seopic.699pic.com/photo/32036/9311.jpg_wh1200.jpg" img_width="720" img_height="540" image_type="1" mime_type="image/jpg" class="syl-page-img" style="width: 25%; height: 25%; visibility: visible;">
+<div id="container">
+ <img src="https://seopic.699pic.com/photo/32036/9311.jpg_wh1200.jpg" img_width="720" img_height="540" image_type="1" mime_type="image/jpg" class="syl-page-img" style="width: 150; height: 150; visibility: visible;">
 </div>
 <div>
     <div id="textafter">
@@ -29,4 +37,15 @@
     </div>
 </div>
 </body>
+    <script language="JavaScript">
+        var btn = document.getElementById("btn");
+        btn.onclick=function () {
+            var elem = document.getElementById("container");
+            changeSize(elem);
+        };
+        function changeSize(element) {
+            element.style.width=300;
+            element.style.height=300;
+        }
+    </script>
 </html>
