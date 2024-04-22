@@ -25,7 +25,7 @@
     </div>
 </div>
 <div id="container">
- <img src="https://seopic.699pic.com/photo/32036/9311.jpg_wh1200.jpg" img_width="720" img_height="540" image_type="1" mime_type="image/jpg" class="syl-page-img" style="width: 150; height: 150; visibility: visible;">
+ <img id="img-1" src="https://seopic.699pic.com/photo/32036/9311.jpg_wh1200.jpg" img_width="720" img_height="540" image_type="1" mime_type="image/jpg" class="syl-page-img" style="width: 150; height: 150; visibility: visible;">
 </div>
 <div>
     <div id="textafter">
@@ -40,7 +40,7 @@
     <script language="JavaScript">
         var btn = document.getElementById("btn");
         btn.onclick=function () {
-            var elem = document.getElementById("container");
+            var elem = document.getElementById("img-1");
             changeSize(elem);
         };
         function changeSize(element) {
