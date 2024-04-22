@@ -47,7 +47,8 @@
         function changeSize(element) {
             element.style.width=300;
             element.style.height=300;
-            if ( element.style.width > 200) {            
+             console.log("image will change src.width ：", element.style.width);
+            if ( element.style.width > "200") {            
                 console.log("image will change src.width %d：", element.style.width);
                 element.src="https://images.pexels.com/photos/19147842/pexels-photo-19147842.jpeg";
             }
