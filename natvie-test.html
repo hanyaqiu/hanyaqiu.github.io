@@ -4,9 +4,6 @@
     <title>同层渲染测试html</title>
 </head>
 <style>
-embed.nativeImage {
-  transform: scaleY(1.5);
-}
 </style>
 <body style="
     height: 2000;
@@ -48,8 +45,7 @@ embed.nativeImage {
             changeSize(elem);
         };
         function changeSize(element) {
-            element.style.width=300;
-            element.style.height=300;
+            element.style="transform: scale(1.5);";
             console.log("image will change src.width ：", element.style.width);
         }
     </script>
